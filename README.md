@@ -28,6 +28,10 @@ bundle exec rspec -f RspecKeyValue::Formatter
 
 ## Changelog
 
+* 0.2.2 (Dec 17th 2016)
+    - add MIT license
+    - update URLs in gemspec
+
 * 0.2.1 (Dec 17th 2016)
     - first release
 

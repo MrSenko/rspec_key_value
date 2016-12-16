@@ -8,8 +8,11 @@ Gem::Specification.new do |spec|
   spec.version       = RspecKeyValue::VERSION
   spec.authors       = ['Alexander Todorov']
   spec.email         = ['atodorov@MrSenko.com']
+  spec.homepage      = 'https://github.com/MrSenko/rspec_key_value'
+  spec.license       = 'MIT'
 
   spec.summary       = 'Simple key:value formatter for rspec'
+  spec.description   = File.read('README.md')
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f|
     f.match(%r{^(test|spec|features)/})
