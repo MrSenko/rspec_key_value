@@ -1,5 +1,15 @@
 language: ruby
 rvm:
+  - 2.2
   - 2.3.1
-before_install: gem install bundler
-script: bundle exec rspec -f RspecKeyValue::Formatter
+before_install:
+  - gem install bundler rake
+  - if [ -z "$_COMMAND" ]; then export _COMMAND=rspec; fi
+script: rake $_COMMAND
+matrix:
+  include:
+    - env: _COMMAND=rubocop
+    rvm: 2.3.1
+  include:
+    - env: _COMMAND=rspec_lint
+    rvm: 2.3.1
