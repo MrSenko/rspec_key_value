@@ -8,8 +8,8 @@ before_install:
 script: rake $_COMMAND
 matrix:
   include:
-    - env: _COMMAND=rubocop
+  - env: _COMMAND=rubocop
     rvm: 2.3.1
   include:
-    - env: _COMMAND=rspec_lint
+  - env: _COMMAND=rspec_lint
     rvm: 2.3.1
