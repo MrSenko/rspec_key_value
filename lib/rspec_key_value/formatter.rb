@@ -7,7 +7,11 @@ module RspecKeyValue
       :example_group_finished,
       :example_passed,
       :example_pending,
-      :example_failed
+      :example_failed,
+      :dump_summary,
+      :dump_failures,
+      :dump_pending,
+      :seed
 
     def initialize(output)
       super(output)
@@ -32,6 +36,18 @@ module RspecKeyValue
 
     def example_failed(failure)
       output.puts example_line(0, failure)
+    end
+
+    def dump_summary(summary)
+    end
+
+    def dump_failures(notification)
+    end
+
+    def dump_pending(notification)
+    end
+
+    def seed(notification)
     end
 
     private
