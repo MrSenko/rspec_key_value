@@ -23,18 +23,15 @@ module RspecKeyValue
     end
 
     def example_passed(passed)
-      description = clean_string(passed.example.description)
-      output.puts "1:#{current_group}.#{description}"
+      output.puts example_line(1, passed)
     end
 
     def example_pending(pending)
-      description = clean_string(pending.example.description)
-      output.puts "-1:#{current_group}.#{description}"
+      output.puts example_line(-1, pending)
     end
 
     def example_failed(failure)
-      description = clean_string(failure.example.description)
-      output.puts "0:#{current_group}.#{description}"
+      output.puts example_line(0, failure)
     end
 
     private
@@ -43,8 +40,14 @@ module RspecKeyValue
       text.strip.downcase.gsub /[^\w.]+/, '_'
     end
 
-    def current_group
-      clean_string @groups.join('.')
+    def current_group(gs = nil)
+      gs = @groups unless gs
+      clean_string gs.join('.')
+    end
+
+    def example_line(result, notification)
+      description = clean_string(notification.example.description)
+      "#{result}:#{current_group}.#{description}"
     end
   end
 end
