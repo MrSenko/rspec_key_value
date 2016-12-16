@@ -1,17 +1,17 @@
-require "rspec/core/formatters/base_text_formatter"
+require 'rspec/core/formatters/base_text_formatter'
 
 module RspecKeyValue
   class Formatter < RSpec::Core::Formatters::BaseTextFormatter
     RSpec::Core::Formatters.register self,
-      :example_group_started,
-      :example_group_finished,
-      :example_passed,
-      :example_pending,
-      :example_failed,
-      :dump_summary,
-      :dump_failures,
-      :dump_pending,
-      :seed
+                                     :example_group_started,
+                                     :example_group_finished,
+                                     :example_passed,
+                                     :example_pending,
+                                     :example_failed,
+                                     :dump_summary,
+                                     :dump_failures,
+                                     :dump_pending,
+                                     :seed
 
     def initialize(output)
       super(output)
@@ -38,17 +38,13 @@ module RspecKeyValue
       output.puts example_line(0, failure)
     end
 
-    def dump_summary(summary)
-    end
+    def dump_summary(summary); end
 
-    def dump_failures(notification)
-    end
+    def dump_failures(notification); end
 
-    def dump_pending(notification)
-    end
+    def dump_pending(notification); end
 
-    def seed(notification)
-    end
+    def seed(notification); end
 
     private
 
