@@ -1,6 +1,9 @@
 require 'rspec/core/formatters/base_text_formatter'
 
 module RspecKeyValue
+  # A simple Rspec formatter which prints the results in the form
+  # R:group.sub_group.example_name where R is
+  # -1 for PENDING, 0 for FAILED and 1 for PASS result
   class Formatter < RSpec::Core::Formatters::BaseTextFormatter
     RSpec::Core::Formatters.register self,
                                      :example_group_started,
@@ -49,7 +52,7 @@ module RspecKeyValue
     private
 
     def clean_string(text)
-      text.strip.downcase.gsub /[^\w.]+/, '_'
+      text.strip.downcase.gsub(/[^\w.]+/, '_')
     end
 
     def current_group(gs = nil)

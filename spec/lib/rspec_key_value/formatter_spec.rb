@@ -3,11 +3,14 @@ require 'spec_helper'
 require 'rspec_key_value/formatter'
 
 RSpec.describe RspecKeyValue::Formatter do
-  let(:output) { StringIO.new }
   subject(:formatter) { described_class.new(output) }
+  let(:output) { StringIO.new }
 
   shared_examples_for 'a test line' do
-    it { is_expected.to include(formatter.send(:clean_string, notification.example.description)) }
+    it do
+      is_expected.to include(formatter.send(:clean_string,
+                                            notification.example.description))
+    end
 
     context 'a nested example group' do
       let(:parent_groups) do
@@ -17,7 +20,10 @@ RSpec.describe RspecKeyValue::Formatter do
         ]
       end
 
-      it { is_expected.to include(formatter.send(:current_group, ['My group', 'my subgroup'])) }
+      it do
+        is_expected.to include(formatter.send(:current_group,
+                                              ['My group', 'my subgroup']))
+      end
     end
   end
 
