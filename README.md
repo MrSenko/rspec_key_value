@@ -26,6 +26,11 @@ Or install it yourself as:
 bundle exec rspec -f RspecKeyValue::Formatter
 ```
 
+## Changelog
+
+* 0.2.1 (Dec 17th 2016)
+    - first release
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies.
