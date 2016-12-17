@@ -12,7 +12,12 @@ Gem::Specification.new do |spec|
   spec.license       = 'MIT'
 
   spec.summary       = 'Simple key:value formatter for rspec'
-  spec.description   = File.read('README.md')
+  spec.description   = <<-DESCRIPTION
+A simple Rspec formatter which prints test results in the format
+`R:group.sub_group.example_name` where
+R is -1 for PENDING, 0 for FAILED and 1 for PASS result.
+Useful if you have to pipe Rspec output to a Bash script!
+  DESCRIPTION
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f|
     f.match(%r{^(test|spec|features)/})

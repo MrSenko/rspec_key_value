@@ -2,7 +2,15 @@
 
 [![Build Status](https://travis-ci.org/MrSenko/rspec_key_value.svg?branch=master)](https://travis-ci.org/MrSenko/rspec_key_value)
 
-A simple key:value formatter for rspec.
+A simple Rspec formatter which prints test results in the format
+
+```
+R:group.sub_group.example_name
+```
+
+where R is -1 for PENDING, 0 for FAILED and 1 for PASS result.
+Useful if you have to pipe Rspec output to a Bash script!
+
 
 ## Installation
 
@@ -27,6 +35,9 @@ bundle exec rspec -f RspecKeyValue::Formatter
 ```
 
 ## Changelog
+
+* 0.2.3 (Dec 17th 2016)
+    - update README and description on RubyGems
 
 * 0.2.2 (Dec 17th 2016)
     - add MIT license
